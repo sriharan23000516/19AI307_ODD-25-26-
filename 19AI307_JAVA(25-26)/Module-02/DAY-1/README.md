@@ -1,21 +1,25 @@
-# Ex.No:2(A) CLASS AND OBJECT
+# Ex.No:2(B) METHODS
 
 ## QUESTION:
 
-Create a class **Course** with attributes **code**, **title**, and **credits**.
-Read details for two courses and display them in the following format:
+Create two methods:
+
+1. **double getArea(double r)** → Calculates and returns the area of a circle (should not print anything).
+2. **void printArea(double area)** → Prints the calculated area.
+
+The program reads the radius from the user, computes the area using `getArea()`, and prints it using `printArea()`.
 
 Example:
 
-| Input                          | Result                                                 |
-| ------------------------------ | ------------------------------------------------------ |
-| CS101 Java 4<br>CS102 Python 3 | CS101 | Java | 4 credits<br>CS102 | Python | 3 credits |
+| Input | Result |
+| ----- | ------ |
+| 2     | 12.56  |
 
 ---
 
 ## AIM:
 
-To write a Java program that creates a class with attributes and demonstrates object creation, attribute assignment, and displaying object data.
+To write a Java program that demonstrates the use of methods by calculating and printing the area of a circle using separate functions for computation and output.
 
 ---
 
@@ -23,11 +27,12 @@ To write a Java program that creates a class with attributes and demonstrates ob
 
 1. Start the program.
 2. Import the necessary package `java.util`.
-3. Create a `Course` class with attributes: code, title, credits.
-4. In the main method, create two Course objects.
-5. Read input values for both objects.
-6. Display the course details in the required format.
-7. End the program.
+3. Define a method `getArea()` to calculate and return the area of a circle.
+4. Define a method `printArea()` to print the area passed to it.
+5. In the main method, get user input for radius.
+6. Call `getArea()` to compute the area.
+7. Call `printArea()` to display the area.
+8. End the program.
 
 ---
 
@@ -35,7 +40,7 @@ To write a Java program that creates a class with attributes and demonstrates ob
 
 ```
 /*
-Program to implement a Class and Objects using Java
+Program to implement a Methods using Java
 Developed by: SRIHARAN J V
 RegisterNumber: 212223100054
 */
@@ -46,32 +51,19 @@ RegisterNumber: 212223100054
 ## SOURCE CODE:
 
 ```java
-import java.util.Scanner;
-
-class Course {
-    String code;
-    String title;
-    int credits;
-}
-
-public class Main {
+import java.util.*;
+class prog {
+    double getArea(double r) {
+        return 3.14*r*r;
+    }
+    void printArea(double area) {
+        System.out.printf("%.2f",area);
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        Course c1 = new Course();
-        c1.code = sc.next();
-        c1.title = sc.next();
-        c1.credits = sc.nextInt();
-
-        Course c2 = new Course();
-        c2.code = sc.next();
-        c2.title = sc.next();
-        c2.credits = sc.nextInt();
-
-        System.out.println(c1.code + " | " + c1.title + " | " + c1.credits + " credits");
-        System.out.println(c2.code + " | " + c2.title + " | " + c2.credits + " credits");
-
-        sc.close();
+        prog obj = new prog();
+        double r = sc.nextDouble();
+        obj.printArea(obj.getArea(r));
     }
 }
 ```
@@ -79,12 +71,12 @@ public class Main {
 ---
 
 ## OUTPUT:
-<img width="739" height="278" alt="Screenshot 2025-11-24 at 1 23 13 PM" src="https://github.com/user-attachments/assets/eb7b2153-ed2e-4031-8b7c-76154665ab59" />
+<img width="436" height="215" alt="Screenshot 2025-11-24 at 1 24 49 PM" src="https://github.com/user-attachments/assets/17882dba-73b8-45c8-a2da-4987542fd5d5" />
+
 
 ---
 
 ## RESULT:
 
-Thus, the Java program to implement classes and objects using the Course example was successfully executed and verified.
-
+Thus, the Java program using methods to compute and display the area of a circle was successfully executed and the output was verified.
 
